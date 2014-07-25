@@ -1,4 +1,6 @@
 function StringExtention(value) {
+
+
     this.value = value;
 
     this.length = function () {
@@ -32,6 +34,7 @@ function StringExtention(value) {
         return result;
     };
 
+    //this has to be refactored using closure
     this.findFirstOrLastIndex = function (inputChar, last) {
         var result = -1;
         if (!(inputChar instanceof StringExtention)) {
@@ -112,10 +115,12 @@ function StringExtention(value) {
 
         var oldStringExtention = new StringExtention(subStringToBeReplaced);
 
-        var indexOf = this.value.indexOf(subStringToBeReplaced);
-        var lastIndexOfStringToBeReplaced = indexOf + oldStringExtention.length();
-        if (indexOf != -1) {
-            result = this.subString(0, indexOf)
+        var indexOfStringToBeReplaced = this.value.indexOf(subStringToBeReplaced);
+
+        var lastIndexOfStringToBeReplaced = indexOfStringToBeReplaced + oldStringExtention.length();
+
+        if (indexOfStringToBeReplaced != -1) {
+            result = this.subString(0, indexOfStringToBeReplaced)
                     + subStringToReplace
                     + this.subString(lastIndexOfStringToBeReplaced, this.length());
         }
@@ -123,8 +128,8 @@ function StringExtention(value) {
         return result;
     }
 
-  
 }
+
 
 
 
