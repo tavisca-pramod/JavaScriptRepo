@@ -104,7 +104,6 @@ function StringExtention(value) {
             subStringToReplace = subStringToReplace.value;
         }
 
-
         var destinationStringFound = false;
 
         if (subStringToBeReplaced === "") {
@@ -113,32 +112,19 @@ function StringExtention(value) {
 
         var oldStringExtention = new StringExtention(subStringToBeReplaced);
 
-        var startIndexOfStringToBeReplaced = this.indexOf(oldStringExtention.value[0]);
-        var lastIndexOfStringToBeReplaced = startIndexOfStringToBeReplaced
-                                                + oldStringExtention.length() - 1;
-
-        while (!destinationStringFound && (startIndexOfStringToBeReplaced != -1)) {
-            var originalString = this.subString(startIndexOfStringToBeReplaced - 1, lastIndexOfStringToBeReplaced);
-
-            if (originalString === subStringToBeReplaced) {
-                result = this.subString(0, startIndexOfStringToBeReplaced - 1)
-                        + subStringToReplace
-                        + this.subString(lastIndexOfStringToBeReplaced, this.length());
-
-                destinationStringFound = true;
-            }
-
-            var remainingString = new StringExtention(this.subString(startIndexOfStringToBeReplaced, this.length()));
-
-            startIndexOfStringToBeReplaced = startIndexOfStringToBeReplaced
-                                            + remainingString.indexOf(oldStringExtention.value[0]);
-            lastIndexOfStringToBeReplaced = startIndexOfStringToBeReplaced
-                                               + oldStringExtention.length() - 1;
+        var indexOf = this.value.indexOf(subStringToBeReplaced);
+        var lastIndexOfStringToBeReplaced = indexOf + oldStringExtention.length();
+        if (indexOf != -1) {
+            result = this.subString(0, indexOf)
+                    + subStringToReplace
+                    + this.subString(lastIndexOfStringToBeReplaced, this.length());
         }
 
         return result;
     }
 
+  
 }
+
 
 
