@@ -1,0 +1,23 @@
+<html>
+<head>
+<script type="text/javascript" src="js/dropdownCrossDomain.js"></script>
+</head>
+<body>
+<form>
+<table>
+
+<tr>
+<td>
+<SELECT id ="rssFeedOptions">
+<option value="">Select One</option>
+<option value="http://dev-mystique.tavisca.com/api/deals/all?token=e1kg3vhqxhxwdd04k0jtflxb&$filter=Type eq 'car'">Cars</option>
+<option value="http://dev-mystique.tavisca.com/api/deals/all?token=e1kg3vhqxhxwdd04k0jtflxb&$filter=Type eq 'hotel'">Hotel</option>
+</SELECT>
+<input  id="feedBtn" type="button" value="Open Feed" onclick="openFeed();" />
+</td>
+</tr>
+</table>
+</form>
+<div id="feed"></div></div></body>
+</html>
+												
