@@ -1,85 +1,94 @@
-function findLength() {
-    var inputString = document.getElementById("stringToOperate");
 
-    var resultLabel = document.getElementById("result");
+var findLengthBtn = document.getElementById("findLengthBtn");
+findLengthBtn.onclick = function () {
 
-    resultLabel.value = new StringExtention(inputString.value).length();
+    var inputString = document.getElementById("inputStringForLength");
+
+    var result = document.getElementById("length");
+
+    result.innerText ="Result : " +
+    new StringExtention(inputString.value).length();
 };
 
-function getConcatinatedString() {
 
-    var originalString = document.getElementById("stringToOperate");
+var concatinateBtn = document.getElementById("concatinateBtn");
+concatinateBtn.onclick = function () {
 
-    var stringToConcat = document.getElementById("firstInput");
+    var firstValueForConcat = document.getElementById("firstValueForConcat");
 
-    var resultLabel = document.getElementById("result");
+    var secondValueForConcat = document.getElementById("secondValueForConcat");
 
-    resultLabel.value = new StringExtention(originalString.value).concat(stringToConcat.value);
+    var concatinatedValue = document.getElementById("concatinatedValue");
+
+    concatinatedValue.innerText =  "Result : " +
+    new StringExtention(firstValueForConcat.value).concat(secondValueForConcat.value);
 };
 
-function getCharacterByIndex() {
+var charAtBtn = document.getElementById("charAtBtn");
+charAtBtn.onclick = function () {
+    var inputStringForCharAt = document.getElementById("inputStringForCharAt");
 
-    var originalString = document.getElementById("stringToOperate");
+    var indexValueForCharAt = document.getElementById("indexValueForCharAt");
 
-    var indexPosition = document.getElementById("firstInput");
-
-    var resultLabel = document.getElementById("result");
-
-    resultLabel.value = new StringExtention(originalString.value).charAt(parseInt(indexPosition.value));
+    var character = document.getElementById("character");
+    
+    character.innerText =  "Result : " + 
+    new StringExtention(inputStringForCharAt.value).charAt(parseInt(indexValueForCharAt.value));
 };
 
-function getIndexOf() {
+var indexOfBtn = document.getElementById("indexOfBtn");
+indexOfBtn.onclick = function () {
 
-    var originalString = document.getElementById("stringToOperate");
+    var firstValueForIndexOf = document.getElementById("firstValueForIndexOf");
 
-    var inputCharacter = document.getElementById("firstInput");
+    var secondValueForIndexOf = document.getElementById("secondValueForIndexOf");
 
-    var resultLabel = document.getElementById("result");
+    var firstIndex = document.getElementById("firstIndex");
 
-    resultLabel.value = new StringExtention(originalString.value).indexOf(inputCharacter.value);
+    firstIndex.innerText =  "Result : " + 
+    new StringExtention(firstValueForIndexOf.value).indexOf(secondValueForIndexOf.value);
 };
 
-function getLastIndexOf() {
+var lastIndexOfBtn = document.getElementById("lastIndexOfBtn");
+lastIndexOfBtn.onclick = function () {
 
-    var originalString = document.getElementById("stringToOperate");
+    var firstValueForLastIndexOf = document.getElementById("firstValueForLastIndexOf");
 
-    var inputCharacter = document.getElementById("firstInput");
+    var secondValueForLastIndexOf = document.getElementById("secondValueForLastIndexOf");
 
-    var resultLabel = document.getElementById("result");
+    var lastFirstIndex = document.getElementById("lastFirstIndex");
 
-    resultLabel.value = new StringExtention(originalString.value)
-        .lastIndexOf(inputCharacter.value);
+    lastFirstIndex.innerText =  "Result : " + 
+    new StringExtention(firstValueForLastIndexOf.value)
+    .lastIndexOf(secondValueForLastIndexOf.value);
 };
 
-function getSubString() {
+var subStringBtn = document.getElementById("subStringBtn");
+subStringBtn.onclick = function () {
 
-    var originalString = document.getElementById("stringToOperate");
+    var inputStringForSubstring = document.getElementById("inputStringForSubstring");
 
-    var startIndex = document.getElementById("firstInput");
-    var toIndex = document.getElementById("secondInput");
+    var startIndexValueForSubstring = document.getElementById("startIndexValueForSubstring");
+    var lastIndexValueForSubstring = document.getElementById("lastIndexValueForSubstring");
 
-    var resultLabel = document.getElementById("result");
+    var subString = document.getElementById("subString");
 
-    resultLabel.value = new StringExtention(originalString.value)
-        .subString(parseInt(startIndex.value), parseInt(toIndex.value));
+    subString.innerText =  "Result : " + 
+    new StringExtention(inputStringForSubstring.value)
+        .subString(parseInt(startIndexValueForSubstring.value), 
+            parseInt(lastIndexValueForSubstring.value));
 };
 
-function getReplacedString() {
+var replaceBtn = document.getElementById("replaceBtn");
+replaceBtn.onclick = function () {
+    var inputStringForReplaceString = document.getElementById("inputStringForReplaceString");
 
-    var originalString = document.getElementById("stringToOperate");
+    var stringValueTobeReplaced = document.getElementById("stringValueTobeReplaced");
+    var stringValueToReplace = document.getElementById("stringValueToReplace");
 
-    var stringTobeReplaced = document.getElementById("firstInput");
-    var stringToReplace = document.getElementById("secondInput");
+    var replacedString = document.getElementById("replacedString");
 
-    var resultLabel = document.getElementById("result");
-
-    resultLabel.value = new StringExtention(originalString.value)
-        .replace(stringTobeReplaced.value, stringToReplace.value);
+    replacedString.innerText =  "Result : " + 
+    new StringExtention(inputStringForReplaceString.value)
+        .replace(stringValueTobeReplaced.value, stringValueToReplace.value);
 };
-
-function clearAll() {
-    document.getElementById("stringToOperate").value = "";
-    document.getElementById("firstInput").value = "";
-    document.getElementById("secondInput").value = "";
-    document.getElementById("result").value = "";
-}

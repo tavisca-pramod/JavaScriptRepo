@@ -37,28 +37,34 @@ function StringExtention(value) {
     //this has to be refactored using closure
     this.findFirstOrLastIndex = function (inputChar, last) {
         var result = -1;
-        if (!(inputChar instanceof StringExtention)) {
+        var lastIndexOfInputChar = -1;
+         if (!(inputChar instanceof StringExtention)) {
             inputChar = new StringExtention(inputChar);
         }
 
         for (var i = 0; this.value[i] != undefined; i++) {
             if (inputChar.value[0] === this.value[i]) {
-                result = i + 1;
+                    result = i + 1;
                 for (var j = 1; j < inputChar.length() ; j++) {
                     if (!(inputChar.value[j] === this.value[i + j])) {
-                        result = -1;
+                        result = -1;                      
                         break;
-                    }
+                    }                 
                 }
 
-                if ((result != -1) && !last) {
-                    return result;
+                if ((result != -1)) {
+                    if(!last)
+                        return result;
+                    else
+                    {
+                        lastIndexOfInputChar = result;
+                    }
                 }
             }
 
         }
 
-        return result;
+        return lastIndexOfInputChar;
     }
 
     this.indexOf = function (inputChar) {
@@ -74,8 +80,12 @@ function StringExtention(value) {
     this.subString = function (startIndex, toIndex) {
         var result = "";
 
-        if (isNaN(startIndex)) {
-            return this.value;
+        if (isNaN(startIndex) || startIndex<0) {
+            startIndex = 0 ;
+        }
+
+         if (isNaN(toIndex) || toIndex<0) {
+            toIndex = 0 ;
         }
 
         if (startIndex > toIndex) {

@@ -2,55 +2,181 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>String Operations</title>
-    <script src="js/StringExtention.js"></script>
-    <script src="js/StringOperations.js"></script>
+   
 </head>
 <body>
     <form>
-        <div>
-            <table>
-                <tr>
-                    <td>Original String</td>
-                    <td>First Input</td>
-                    <td>Second Input</td>
-                    <td>Result</td>
+    <div>
+        <table border="1px">
+        <tr>
+            <td>
+             <table>
+               <tr>
+                   <h3>Find Length</h3>
+               </tr>
+               <tr>               
+                   <td>
+                       <label>Enter a value</label>
+                       <input id="inputStringForLength" /></td>                    
+                   <tr>               
+                   <td>                    
+                        <input id="findLengthBtn" type="button" value="Length"/>
+                        <label id="length">Result : </label></td>          
+                   </tr>
                 </tr>
-
-                <tr>
-                    <td>
-                        <input id="stringToOperate" /></td>
-                    <td>
-                        <input id="firstInput" /></td>
-                    <td>
-                        <input id="secondInput" /></td>
-                    <td>
-                        <input id="result" value="" /></td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <td>
-                        <input type="button" value="length" onclick="findLength();" />
-
-                        <input type="button" value="concat" onclick="getConcatinatedString();" />
-
-                        <input type="button" value="charAt" onclick="getCharacterByIndex();" />
-
-                        <input type="button" value="indexOf" onclick="getIndexOf();" />
-
-                        <input type="button" value="lastIndexOf" onclick="getLastIndexOf();" />
-
-                        <input type="button" value="subString" onclick="getSubString();" />
-
-                        <input type="button" value="replace" onclick="getReplacedString();" />
-
-                        <input type="button" value="clear" onclick="clearAll();" />
-
+              </table>
+            </td>
+            </tr>
+            <tr>
+            <td>
+             <table>
+               <tr>
+                   <h3>Concat String</h3>
+               </tr>
+               <tr>               
+                   <td>
+                       <label>Enter a value</label>
+                       <input id="firstValueForConcat" /></td>    
+                        <td>
+                       <label>Enter another value to concat</label>
+                       <input id="secondValueForConcat" /></td>                  
+                   <tr>               
+                   <td>                    
+                        <input id="concatinateBtn" type="button" value="Concat"/>
                     </td>
+                    <td>         
+                        <label id="concatinatedValue">Result : </label></td>          
+                   </tr>
                 </tr>
-            </table>
-        </div>
-    </form>
+              </table>
+            </td>
 
+            <td>
+             <table>
+               <tr>
+                   <h3>Find character by index</h3>
+               </tr>
+               <tr>               
+                   <td>
+                       <label>Enter String value</label>
+                       <input id="inputStringForCharAt" /></td>    
+                        <td>
+                       <label>Enter index value</label>
+                       <input id="indexValueForCharAt" /></td>                  
+                   <tr>               
+                   <td>                    
+                        <input id="charAtBtn" type="button" value="Get Char"/>
+                    </td>
+                    <td>                             
+                        <label id="character">Result : </label></td>          
+                   </tr>
+                </tr>
+              </table>
+            </td>
+          </tr>
+            <tr>
+            <td>
+             <table>
+               <tr>
+                   <h3>Find index of string</h3>
+               </tr>
+               <tr>               
+                   <td>
+                       <label>Enter a value</label>
+                       <input id="firstValueForIndexOf" /></td> 
+                        <td>
+                       <label>Enter another value</label>
+                        <input id="secondValueForIndexOf" /></td>                
+                   <tr>
+                   <td>                    
+                        <input id ="indexOfBtn" type="button" value="Get Index"/>
+                    </td>
+                    <td>         
+                        <label id="firstIndex">Result : </label></td>          
+                   </tr>
+                </tr>
+              </table>
+            </td>
+      
+            <td>
+             <table>
+               <tr>
+                   <h3>Find Last index of string</h3>
+               </tr>
+               <tr>               
+                   <td>
+                       <label>Enter a value</label>
+                       <input id="firstValueForLastIndexOf" /></td> 
+                        <td>
+                       <label>Enter another value</label>
+                        <input id="secondValueForLastIndexOf" /></td>                
+                   <tr>
+                   <td>                    
+                        <input id ="lastIndexOfBtn" type="button" value="Get last index"/>
+                    </td>
+                    <td>         
+                        <label id="lastFirstIndex">Result : </label></td>          
+                   </tr>
+                </tr>
+              </table>
+            </td>
+  </tr>
+        <tr>
+            <td>
+             <table>
+               <tr>
+                   <h3>Find substring</h3>
+               </tr>
+               <tr>               
+                   <td>
+                       <label>Enter a String value</label>
+                       <input id="inputStringForSubstring" /></td> 
+                        <td>
+                       <label>Enter start index value</label>
+                        <input id="startIndexValueForSubstring" /></td>     
+                        <td><label>Enter last index value</label>
+                        <input id="lastIndexValueForSubstring" /></td>               
+                   <tr>
+                   <td>                    
+                        <input id ="subStringBtn" type="button" value="Get substring"/>
+                    </td>
+                    <td>         
+                        <label id="subString">Result : </label></td>          
+                   </tr>
+                </tr>
+              </table>
+            </td>
+  
+            <td>
+             <table>
+               <tr>
+                   <h3>Replace String</h3>
+               </tr>
+               <tr>               
+                   <td>
+                       <label>Enter a String value</label>
+                       <input id="inputStringForReplaceString" /></td> 
+                        <td>
+                       <label>Enter string to be replaced</label>
+                        <input id="stringValueTobeReplaced" /></td>     
+                        <td><label>Enter new string value to replace</label>
+                        <input id="stringValueToReplace" /></td>               
+                   <tr>
+                   <td>                    
+                        <input id ="replaceBtn" type="button" value="Replace"/>
+                    </td>
+                    <td>         
+                        <label id="replacedString">Result : </label></td>          
+                   </tr>
+                </tr>
+              </table>
+            </td>
+
+        </tr>
+    </table>           
+   </div>
+</form>
+ <script src="js/StringExtention.js"></script>
+    <script src="js/StringOperations.js"></script>
 </body>
 </html>
