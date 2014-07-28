@@ -84,6 +84,8 @@ function StringExtention(value) {
             startIndex = 0 ;
         }
 
+        toIndex = toIndex.length == 0 ? this.length() : toIndex;
+
          if (isNaN(toIndex) || toIndex<0) {
             toIndex = 0 ;
         }
@@ -93,9 +95,7 @@ function StringExtention(value) {
             toIndex = startIndex - toIndex;
             startIndex = startIndex - toIndex;
         }
-
-        toIndex = isNaN(toIndex) ? this.length() : toIndex;
-
+       
         toIndex = (toIndex > this.length() ? this.length() : toIndex);
 
         while (startIndex < toIndex) {

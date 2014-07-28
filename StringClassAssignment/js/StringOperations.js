@@ -75,8 +75,8 @@ subStringBtn.onclick = function () {
 
     subString.innerText =  "Result : " + 
     new StringExtention(inputStringForSubstring.value)
-        .subString(parseInt(startIndexValueForSubstring.value), 
-            parseInt(lastIndexValueForSubstring.value));
+        .subString(startIndexValueForSubstring.value, 
+            lastIndexValueForSubstring.value);
 };
 
 var replaceBtn = document.getElementById("replaceBtn");
